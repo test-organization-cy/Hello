@@ -6,7 +6,7 @@ public class NavigationRef extends MybatisBaseObject {
     /**
      * 导航ID
      */
-    private Long navigationId;
+    private Long navigationId1;
 
     /**
      * project_id/staff_id/-1
@@ -74,18 +74,6 @@ public class NavigationRef extends MybatisBaseObject {
         navigationRef.setDeleted(false);
         return navigationRef;
     }
-
-    public static NavigationRef fromSaveNavigationConfigRequest(SaveNavigationConfigRequest request, String refObjectType) {
-        NavigationRef navigationRef = new NavigationRef();
-        navigationRef.resetActionDateAndUser(request.getStaffId());
-        navigationRef.setDeleted(false);
-        navigationRef.setNavigationId(request.getNavigationId());
-        navigationRef.setRefObjectId(request.getObjectId());
-        navigationRef.setRefObjectType(refObjectType);
-        navigationRef.setRegionId(request.getRegionId());
-        return navigationRef;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
