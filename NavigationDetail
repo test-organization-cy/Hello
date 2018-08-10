@@ -1,0 +1,28 @@
+
+/**
+ * navigation domain
+ *
+ * @author: zhounan.zn
+ * @date: 2018/6/14
+ */
+public class NavigationDetail extends Navigation {
+
+    private static final long serialVersionUID = 2101670084457800610L;
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public NavigationDetailDTO toNavigationDetailDTO(boolean i18n) {
+        NavigationDetailDTO navigationDetail = BeanUtil.copy(this, NavigationDetailDTO.class, new I18nConverter(NavigationDetailDTO.class));
+        if(i18n) {
+            navigationDetail.setName(getI18nValue(getName(), getEnName()));
+        }
+        return navigationDetail;
+    }
+}
