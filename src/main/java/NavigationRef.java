@@ -7,6 +7,11 @@ public class NavigationRef extends MybatisBaseObject {
      * 导航ID
      */
     private Long navigationId1;
+    
+      /**
+     * Project/User/GLOBAL
+     */
+    private String refObjectType1;
 
     /**
      * project_id/staff_id/-1
